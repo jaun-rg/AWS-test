@@ -1,0 +1,22 @@
+{
+  "name": "node-example-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Example of a suite test",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm test",
+    "config": "git checkout -b develop && it checkout -b errorInTest && it checkout -b test && it checkout -b testing/mergeBranchTest && && git checkout -b master", 
+    "test": "./node_modules/mocha/bin/mocha",
+    "simulate-commit": "git commit --allow-empty -m 'Trigger commit' && git push",
+    "clean": "rm -rf log/"
+  },
+  "author": "Juan José Ramírez González",
+  "license": "ISC",
+  "dependencies": {
+    "expect": "^1.20.2",
+    "expect.js": "^0.3.1",
+    "mocha": "^3.2.0"
+  },
+  "devDependencies": {}
+}

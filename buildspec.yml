@@ -1,0 +1,25 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - npm install
+      - echo Install is successfull...
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started 
+      - npm test
+  post_build:
+    commands:
+      - ls -la .
+      - npm pack
+      - echo Build completed 
+artifacts:
+    files:  
+      - buildspec.yml 
+      - package.json 
+      - test/**/*    
+  
