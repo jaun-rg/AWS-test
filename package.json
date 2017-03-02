@@ -6,9 +6,12 @@
   "main": "index.js",
   "scripts": {
     "start": "npm test",
-    "config": "git checkout -b develop && it checkout -b errorInTest && it checkout -b test && it checkout -b testing/mergeBranchTest && && git checkout -b master", 
     "test": "./node_modules/mocha/bin/mocha",
-    "simulate-commit": "git commit --allow-empty -m 'Trigger commit' && git push",
+    "config": "./init-branch",
+    "simulate-commit": "git commit --allow-empty -m 'Simulate commit' && git push",
+    "simulate-dev-merge": "CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && MERGE_BRANCH=develop && npm run simulateMerge",
+    "simulate-merge": "CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && MERGE_BRANCH=master && npm run simulateMerge",
+    "simulateMerge": "git checkout $CURRENT_BRANCH && npm run simulate-commit && git checkout $MERGE_BRANCH && git merge $CURRENT_BRANCH  && git push && git checkout $CURRENT_BRANCH",
     "clean": "rm -rf log/"
   },
   "author": "Juan José Ramírez González",
