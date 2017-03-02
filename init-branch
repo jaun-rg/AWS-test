@@ -9,6 +9,5 @@ git checkout -b errorInTest
 git checkout -b test
 git checkout -b testing/mergeBranchTest
 git checkout -b master
-git checkout -b master
 git push -u origin --all
 git checkout master
