@@ -14,12 +14,5 @@ phases:
       - npm test
   post_build:
     commands:
-      - ls -la .
-      - npm pack
       - echo Build completed 
-artifacts:
-    files:  
-      - buildspec.yml 
-      - package.json 
-      - test/**/*    
   
