@@ -14,5 +14,4 @@ phases:
       - npm run coverage
   post_build:
     commands:
-      - echo Build completed 
-  
+      - echo Build completed
