@@ -12,10 +12,10 @@ phases:
     commands:
       - echo Build started 
       - npm test
-  post_build:
-    commands:
       - rm buildspec.yml
       - mv coverage-buildspec.yml buildspec.yml
+  post_build:
+    commands:
       - echo Build completed 
   artifacts:
     files:
