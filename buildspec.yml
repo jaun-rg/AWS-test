@@ -12,8 +12,14 @@ phases:
     commands:
       - echo Build started 
       - npm test
-      - npm run coverage
   post_build:
     commands:
+      - rm buildspec.yml
+      - mv coverage-buildspec.yml buildspec.yml
       - echo Build completed 
-  
+  artifacts:
+    files:
+      - buildspec.yml
+      - package.json
+      - karma.conf.js
+      - test/**/*
