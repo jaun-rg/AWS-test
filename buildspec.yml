@@ -18,10 +18,14 @@ phases:
       - ls -la .
       - rm buildspec.yml
       - mv coverage-buildspec.yml buildspec.yml
-      - zip -r output.zip . -x "node_modules"
+      #- zip -r output.zip . -x "node_modules"
       - ls -la .
+      - cat buildspec.yml
       - echo Build completed 
   artifacts:
     files:
-      - output.zip
+      - buildspec.yml
+      - package.json
+      - karma.conf.js
+      - test/**/*
     discard-paths: yes
