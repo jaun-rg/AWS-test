@@ -22,6 +22,6 @@
     ],
     "cache": true,
     "all": true,
-    "check-coverage": true
-     "report-dir": "coverage"
+    "check-coverage": true,
+    "report-dir": "./coverage"
   }
