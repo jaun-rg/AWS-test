@@ -12,16 +12,16 @@ phases:
     commands:
       - echo Build started 
       - npm test
-      - rm buildspec.yml
-      - mv coverage-buildspec.yml buildspec.yml
   post_build:
     commands:
+      - pwd
+      - ls -la .
+      - rm buildspec.yml
+      - mv coverage-buildspec.yml buildspec.yml
+      - zip -r output.zip . -x "node_modules"
+      - ls -la .
       - echo Build completed 
   artifacts:
     files:
-      - buildspec.yml
-      - package.json
-      - karma.conf.js
-      - .nycrc
-      - test/**/*
-    discard-paths: false
+      - output.zip
+    discard-paths: yes
