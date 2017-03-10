@@ -16,8 +16,12 @@ phases:
     commands:
       - rm buildspec.yml
       - mv coverage-buildspec.yml buildspec.yml
-      - zip -r output.zip . -x "node_nodules" -x "coverage"
       - echo Build completed 
   artifacts:
     files:
-      - output.zip
+      - buildspec.yml
+      - package.json
+      - karma.conf.js
+      - .nycrc
+      - test/**/*
+    discard-paths: false

@@ -15,3 +15,11 @@ phases:
   post_build:
     commands:
       - echo Build completed
+  artifacts:
+    files:
+      - buildspec.yml
+      - package.json
+      - karma.conf.js
+      - .nycrc
+      - test/**/*
+    discard-paths: false    
